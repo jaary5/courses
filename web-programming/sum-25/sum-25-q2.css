@@ -1,0 +1,154 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+body {
+    height: 100vh;
+}
+
+.padding {
+    padding: 15px;
+}
+
+.margin {
+    margin: 15px;
+}
+
+.radious {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* --------------------------------------------------------- */
+
+.nav {
+    height: 2%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(199, 197, 197);
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+}
+
+.nl {
+    padding-right: 15px;
+}
+
+.nr {
+    padding: 0px 15px;
+}
+
+.grid1 {
+    height: 100%;
+    display: grid;
+    grid-template: 12fr 1fr / 1fr 2fr;
+    grid-template-areas:
+        "g11 g12"
+        "g13 g13";
+}
+
+.g11 {
+    grid-area: g11;
+
+
+    border: 1px solid black;
+    border-radius: 8px;
+        background: linear-gradient(to bottom, #08e9de, #649beb);
+}
+}
+
+.g12 {
+    grid-area: g12;
+}
+
+.g13 {
+    grid-area: g13;
+    background: linear-gradient(to right, #b87f06, #43a006, #91a584);
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+button {
+    padding: 5px;
+    border-radius: 6px;
+}
+
+.notice {
+    height: 25%;
+
+
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.top {
+    height: 30%;
+    background-color: antiquewhite;
+}
+
+.bottom {
+    height: 62%;
+    background-color:beige;
+}
+
+
+.grid2 {
+    height: 60%;
+    display: grid;
+    grid-template: 1fr 1fr 1fr/ 2fr 1fr 1fr;
+    grid-template-areas:
+        "g21 g22 g23"
+        "g24 g25 g26"
+        "g27 g28 g29";
+
+    /* background-color: orange; */
+    background: linear-gradient(to right, #a5630c, #ddc176);
+}
+
+.g21 {
+    grid-area: g21;
+    border: 1px solid black;
+}
+.g22 {
+    grid-area: g22;
+    border: 1px solid black;
+}
+.g23 {
+    grid-area: g23;
+    border: 1px solid black;
+}
+.g24 {
+    grid-area: g24;
+    border: 1px solid black;
+}
+.g25 {
+    grid-area: g25;
+    border: 1px solid black;
+}
+.g26 {
+    grid-area: g26;
+    border: 1px solid black;
+}
+.g27 {
+    grid-area: g27;
+    border: 1px solid black;
+}
+.g28 {
+    grid-area: g28;
+    border: 1px solid black;
+}
+.g29 {
+    grid-area: g29;
+    border: 1px solid black;
+}

@@ -1,0 +1,131 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+body {
+    height: 100vh;
+}
+
+.padding {
+    padding: 15px;
+}
+
+.margin {
+    margin: 15px;
+}
+
+.radious {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* ----------------------------------------------------------- */
+
+.grid1 {
+    height: 100%;
+    display: grid;
+    grid-template: 1fr 9fr auto / 1fr 8fr 1fr;
+    grid-template-areas:
+        "g11 g11 g11"
+        ".   g12 ."
+        "g13 g13 g13"
+    ;
+}
+
+.g11 {
+    grid-area: g11;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.g12 {
+    grid-area: g12;
+}
+.g13 {
+    grid-area: g13;
+}
+
+.nav-right {
+    display: flex;
+}
+
+.grid2 {
+    height: 100%;
+    display: grid;
+    grid-template: 1fr 3fr / 1.5fr 1fr;
+    grid-template-areas:
+        "g21 g21"
+        "g22 g23"
+    ;
+    gap: 15px;
+}
+.g21 {
+    grid-area: g21;
+}
+
+.g22 {
+    grid-area: g22;
+}
+
+.g23 {
+    grid-area: g23;
+}
+
+.grid3 {
+    height: 60%;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-template-areas:
+        "g31 g32"
+        "g33 g34"
+    ;
+    gap: 15px;
+}
+
+.g31 {
+    grid-area: g31;
+    border: 1px solid orange;
+    background-color: #fffbeb;
+}
+
+.g32 {
+    grid-area: g32;
+    border: 1px solid orange;
+    background-color: #fffbeb;
+}
+
+.g33 {
+    grid-area: g33;
+    border: 1px solid orange;
+    background-color: #fffbeb;
+}
+.g34 {
+    grid-area: g34;
+    border: 1px solid orange;
+    background-color: #fffbeb;
+}
+
+input, button {
+    padding: 8px;
+    width:  100%;
+    border-radius: 8px;
+}
+/* --------------------------------------------------------------- */
+
+.bc-black {
+    background-color: black;
+}
+.tc-white {
+    color: white;
+}
+.bc-white {
+    background-color: white;
+}
+
+.bc1 {
+    background-color: #c85a32;
+}

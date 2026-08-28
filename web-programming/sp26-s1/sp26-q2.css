@@ -1,0 +1,173 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+body {
+    height: 100vh;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.padding {
+    padding: 15px;
+}
+
+.margin {
+    margin: 15px;
+}
+
+.radious {
+    border-radius: 8px;
+}
+
+/* ---------------------------------------------------------------- */
+
+.nav {
+    height: 10%;
+}
+
+.post {
+    border: 1px solid blue;
+    margin-right: 15px;
+}
+
+.nrc {
+    padding: 5px 10px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-right {
+    display: flex;
+}
+
+/* ------------------------------- */
+
+.main-content {
+    height: 90%;
+}
+
+.grid {
+    height: 100%;
+    display: grid;
+    grid-template: 1fr / 0.3fr 1fr;
+    grid-template-areas:
+        "g1 g2"
+    ;
+
+    gap: 15px;
+}
+
+.g1 {
+    grid-area: g1;
+}
+
+.g2 {
+    grid-area: g2;
+}
+
+.jt-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter,
+.department,
+.experience {
+    border: 1px solid black;
+    background-color: white;
+}
+
+.apply-btn {
+    width: 95%;
+    padding: 8px;
+    margin: 5px;
+}
+
+/* ------------------------------------------- */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-grid {
+    height: 60%;
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr;
+    grid-template-areas:
+        "c1"
+        "c2"
+        "c3";
+
+    gap: 20px;
+}
+
+.c1 {
+    grid-area: c1;
+
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.c-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.c2 {
+    grid-area: c2;
+
+    display: flex;
+    justify-content: space-between;
+
+    background-color: white;
+}
+
+.c3 {
+    grid-area: c3;
+
+    display: flex;
+    justify-content: space-between;
+
+    background-color: white;
+}
+
+.capsule {
+    display: flex;
+    gap: 20px;
+}
+
+.cap {
+    display: inline-block;
+    border-radius: 50px;
+    padding: 3px 16px;
+}
+
+/* ------------------------------------------------------------------ */
+
+.bc1 {
+    background-color: #c1c7e4;
+}
+
+.bc2 {
+    background-color: #e2ebfa;
+}
+
+.bc3 {
+    background-color: #d6f2e7;
+}
+
+.bc4 {
+    background-color: #fdebc0;
+}

@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red;  */
+}
+
+body {
+    height: 100vh;
+}
+
+.padding {
+    padding: 15px;
+}
+
+.radious {
+    border-radius: 8px;
+    /* Clips child elements to the container's rounded border */
+    overflow: hidden;
+}
+
+.margin {
+    margin: 15px;
+}
+
+
+/* ------------------------------------------------------- */
+
+.main {
+    height: 100%;
+}
+.grid1 {
+    height: 100%;
+    display: grid;
+    grid-template: 1fr / 1fr 3fr;
+    grid-template-areas:
+        "g11 g12";
+}
+.g11 {
+    grid-area: g11;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.g12 {
+    grid-area: g12;
+}
+
+.avatar {
+    /* display: block; */
+    /* margin: 0 auto; */
+
+    align-self: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    text-align: center;
+    align-content: center;
+    overflow: hidden;
+}
+
+.sidebar {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 16px;
+}
+
+.cat-card {
+    width: 100%;
+    height: 10%;
+
+    display: flex;
+    gap: 15px;
+}
+
+.cc {
+    flex: 1;
+    border-radius: 10px;
+}
+
+.bottom {
+    width: 100%;
+    height: 40%;
+
+    display: flex;
+    gap: 15px;
+}
+
+.left, .right {
+    flex: 1;
+
+}
+
+.lf-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add {
+    text-align: center;
+    border: 1px dotted black;
+    border-radius: 8px;
+}
+
+.ib {
+    padding: 5px;
+    border-radius: 8px;
+}
+
+
+
+/* -------------------------------------------------------- */
+.bc1 {
+    background-color: #cfeef3;
+}
+
+.bc2 {
+    background-color: #0d3e86;
+}
+
+.bc3 {
+    background-color: #e9eff7;
+}
+
+.bc4 {
+    background-color: #6b63ff;
+}
+
+.bc5 {
+    background-color: #0db0d7;
+}
+
+.bc6 {
+    background-color: #ea6aa8;
+}
+.bc7 {
+    background-color: #2c74db;
+}
+
+.bc-white {
+    background-color: white;
+}
+

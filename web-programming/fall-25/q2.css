@@ -1,0 +1,197 @@
+/* color codes */
+.color1 {
+    background-color: #536FFE;
+}
+
+.color2 {
+    background-color: #C1CDFF;
+}
+
+.color3 {
+    background-color: #9EFE1E;
+}
+
+.color4 {
+    background-color: #FEBD57;
+}
+
+.color5 {
+    background-color: #F93536;
+}
+
+.color6 {
+    background-color: #EBEBEB;
+}
+
+.black {
+    background-color: black;
+}
+
+.white {
+    background-color: white;
+}
+
+/* setup */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.full-screen {
+    height: 100vh;
+}
+
+.padding {
+    padding: 20px;
+}
+
+.radious {
+    border-radius: 16px;
+}
+
+
+/* dev */
+.main-body {
+    height: 92%;
+}
+
+.navbar {
+    height: 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-mid {
+    display: flex;
+}
+
+.tabs {
+    padding: 10px;
+}
+
+.nav-right {
+    display: flex;
+}
+
+.profile-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    text-align: center;
+    align-content: center;
+}
+
+.user-name {
+    padding-right: 30px;
+}
+
+.sp {
+    color: rgb(121, 121, 121);
+}
+
+.bold-font {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.grid {
+    height: 30%;
+    display: grid;
+    grid-template: 1fr 1fr / 2fr 1fr 1fr;
+    grid-template-areas:
+        "g1 g2 g3"
+        "g1 g4 g3"
+    ;
+
+    column-gap: 25px;
+    row-gap: 15px;
+}
+
+.g1 {
+    grid-area: g1;
+    display: flex;
+    align-items: center;
+}
+
+.g1-left {
+    display: flex;
+}
+
+.g1-right {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.gray-bar {
+    height: 10px;
+    background-color: grey;
+    width: 100%;
+}
+
+.progress-bar {
+    height: 10px;
+    width: 80%;
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+}
+
+.g2 {
+    grid-area: g2;
+}
+
+.g3 {
+    grid-area: g3;
+}
+
+.g4 {
+    grid-area: g4;
+}
+
+/* last content grid */
+
+.grid2 {
+    height: 30%;
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr;
+    grid-template-areas:
+        "c1 c2 c3"
+    ;
+
+    column-gap: 25px;
+    row-gap: 15px;
+}
+
+.c1 {
+    grid-area: c1;
+}
+
+.c2 {
+    grid-area: c2;
+}
+
+.c3 {
+    grid-area: c3;
+}
+
+.capsule {
+    /* Wraps tightly around the text */
+    display: inline-block;
+
+    /* Creates the rounded capsule shape */
+    border-radius: 50px;
+
+    padding: 6px 16px;
+    color: #171a27;
+}
+
+/* * {
+    outline: 1px solid red;
+} */

@@ -1,0 +1,172 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.padding {
+    padding: 15px;
+}
+
+.margin {
+    margin: 15px;
+}
+
+.radious {
+    border-radius: 8px;
+}
+
+/* ---------------------------------------------------------------- */
+
+.main-content {
+    height: 99%;
+}
+
+.nav {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-mid {
+    display: flex;
+}
+
+.rest {
+    height: 88%;
+    overflow: hidden;
+}
+
+.grid {
+    height: 95%;
+    display: grid;
+    grid-template: 1fr 1.8fr / 0.5fr 0.5fr 0.5fr 0.5fr;
+
+    grid-template-areas:
+        "g1 g2 g3 g4"
+        "g5 g5 g6 g6"
+    ;
+    gap: 15px;
+}
+
+.g1 {
+    grid-area: g1;
+    border: 2px solid black;
+}
+
+.g2 {
+    grid-area: g2;
+    border: 2px solid black;
+}
+
+.g3 {
+    grid-area: g3;
+    border: 2px solid black;
+}
+
+.g4 {
+    grid-area: g4;
+    border: 2px solid black;
+}
+
+.g5 {
+    grid-area: g5;
+
+    border: 3px solid black;
+}
+
+.g5-flex {
+    display: flex;
+}
+
+.g51,
+.g52 {
+    flex-grow: 1;
+}
+
+.g6 {
+    grid-area: g6;
+    border: 3px solid black;
+
+}
+
+.g6-flex {
+    display: flex;
+    gap: 8px;
+}
+
+.g6c {
+    border: 1px solid black;
+    border-radius: 8px;
+    flex: 1 1 0;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.g6-btn {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+}
+
+.g6-btn button {
+    flex: 1 1 auto;
+}
+
+.c-btn {
+    width: 100%;
+    padding: 8px 16px;
+}
+
+input {
+    /* width: 100%; */
+    border-radius: 8px;
+    padding: 8px;
+}
+
+/* -------------------------------------------------------------------- */
+.bc1 {
+    background-color: #d6d8da;
+}
+
+.bc2 {
+    background-color: #6c757d;
+}
+
+.bc3 {
+    background-color: #1975d1;
+}
+
+.bc4 {
+    background-color: #378b3b;
+}
+
+.bc5 {
+    background-color: #f78100;
+}
+
+.bc6 {
+    background-color: #781fa0;
+}
+
+.bc7 {
+    background-color: #1a237e;
+}
+
+.bc8 {
+    background-color: #6c757d;
+}
+
+.bc-white {
+    background-color: white;
+}
