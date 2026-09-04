@@ -5,7 +5,7 @@
 
 ![Preview](/web-programming/sum-26/q1/q1.png)
 
-[View HTML](/web-programming/sum-26/q1/q1.html) | [View CSS](/web-programming/sum-26/q1/q1.html)
+[View HTML](/web-programming/sum-26/q1/q1.html) | [View CSS](/web-programming/sum-26/q1/q1.css)
 
 ---
 
@@ -13,7 +13,7 @@
 
 ![Preview](/web-programming/sum-26/q2/q2.png)
 
-[View HTML](/web-programming/sum-26/q2/q2.html) | [View CSS](/web-programming/sum-26/q2/q2.html)
+[View HTML](/web-programming/sum-26/q2/q2.html) | [View CSS](/web-programming/sum-26/q2/q2.css)
 
 ---
 
