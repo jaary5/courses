@@ -1,5 +1,22 @@
 ## HTML & CSS Mid practice
 
+
+### summer26-q1
+
+![Preview](/web-programming/sum-26/q1/q1.png)
+
+[View HTML](/web-programming/sum-26/q1/q1.html) | [View CSS](/web-programming/sum-26/q1/q1.html)
+
+---
+
+### summer26-q2
+
+![Preview](/web-programming/sum-26/q2/q2.png)
+
+[View HTML](/web-programming/sum-26/q2/q2.html) | [View CSS](/web-programming/sum-26/q2/q2.html)
+
+---
+
 ### spring26-slot1-q1
 
 ![Preview](/web-programming/sp26-s1/sp26-q1.png)
