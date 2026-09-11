@@ -102,7 +102,7 @@ int main() {
     cout << "is n a power of 4? = " << powOF4(n) << nl;
 }
 ```
-
+<br>
 
 ## 2. Divide & Conquer
 
@@ -153,6 +153,9 @@ int main() {
     cout << "Min: " << res.second << nl;
 }
 ```
+
+<br>
+
 
 ### 2.1.2 Max-Min (Structure)
 
@@ -209,6 +212,9 @@ int main() {
 }
 ```
 
+<br>
+
+
 ### 2.2 Maximum Subarray Sum
 
 ```cpp
@@ -261,6 +267,8 @@ int main() {
     cout << "max subArr sum: " << max_sum << nl;
 }
 ```
+
+<br>
 
 
 ### 2.3 Merge Sort
@@ -330,6 +338,9 @@ int main() {
 ```
 
 
+<br>
+
+
 ### 2.4 Quick Sort
 
 ```cpp
@@ -383,6 +394,8 @@ int main() {
     } cout << nl;
 }
 ```
+
+<br>
 
 
 ## 3. Greedy Algorithms
@@ -442,6 +455,10 @@ int main() {
 }
 ```
 
+
+<br>
+
+
 ### 3.2 Activity Selection
 
 ```cpp
@@ -490,22 +507,293 @@ int main() {
 }
 ```
 
+<br>
+
+
 ## 4. Graph Algorithm
 
 ### 4.1 Kruskal (MST)
 
 ```cpp
+#include<bits/stdc++.h>
+using namespace std;
+#define nl "\n"
+
+int Find(int x, vector<int>& parent) {
+    if (parent[x] == -1) return x;
+
+    // return Find(parent[x], parent);
+    return parent[x] = Find(parent[x], parent);     // path compression
+}
+
+void Union(int u, int v, vector<int>& parent, vector<int>& rank) {
+    int rootU = Find(u, parent);
+    int rootV = Find(v, parent);
+
+    // we dont have to check here as we  already checked from main, but whatever :)
+    if (rootU == rootV) return;    
+
+    if (rank[rootU] > rank[rootV]) {
+        parent[rootV] = rootU;
+        rank[rootU] += rank[rootV];
+    } else {
+        parent[rootU] = rootV;
+        rank[rootV] += rank[rootU];
+    }
+}
+
+bool comp(vector<int>& a, vector<int>& b) {
+    return a[2] < b[2];     // sorts based on weight
+}
+
+int main() {
+    int V, E;
+    cout << "num of vertices: "; cin >> V;
+    cout << "num of edges   : "; cin >> E;
+
+    // here we store the edges; cause kruskal works as random trees of forest
+    // kruskal choose the edge with smallest weight and make random trees of forrest at fisrt
+    // Dijkstra → Adjacency List (needs neighbors of a node frequently)
+    // Bellman-Ford → Edge List (needs to scan all edges repeatedly)
+    // Kruskal → Edge List (sort all edges)
+    // Prim → Adjacency List (grow from a node to neighbors)
+    vector<vector<int>> edgeList;
+    for (int i = 0; i < E; i++) {
+        cout << "u, v, w: ";
+        int u, v, w;
+        cin >> u >> v >> w;     
+
+        edgeList.push_back({u,v,w});   
+    }
+
+    // default sorting sorts based lexicographically
+    // sorts based on first element, if 1st el same, check 2nd
+    sort(edgeList.begin(), edgeList.end(), comp);
+
+    vector<int> parent(V, -1);     // init parent with -1 means, everyone is their own parent
+    vector<int> rank(V, 1);        // rank defines the size of tree here, so everyone is at size=1 at first 
+
+    int mstCost = 0;
+    int edgeCount = 0;
+    
+    for (auto edge: edgeList) {
+        int u = edge[0];
+        int v = edge[1];
+        int w = edge[2];
+
+        // both of them cant have same parent
+        if (Find(u, parent) != Find(v, parent)) {
+            Union(u, v, parent, rank);
+
+            mstCost += w;
+            edgeCount++;
+
+            cout << u << "-" << v << " (" << w << ")" << nl;
+        }
+
+        if (edgeCount == V-1) break;
+    }
+
+    cout << "mst cost = " << mstCost << nl;
+}
 ```
+
+<br>
 
 ### 4.2 Dijkstra (Shortest Path)
 
 ```cpp
+#include<bits/stdc++.h>
+using namespace std;
+#define nl "\n"
+
+int main() {
+    int V, E;
+    cout << "num of Vertices: "; cin >> V;
+    cout << "num of edges   : "; cin >> E;
+    
+    // Dijkstra → Adjacency List (needs neighbors of a node frequently)
+    // Bellman-Ford → Edge List (needs to scan all edges repeatedly)
+    // Kruskal → Edge List (sort all edges)
+    // Prim → Adjacency List (grow from a node to neighbors)
+    vector<vector<pair<int, int>>> graph(V);    // adjacency List
+    for (int i = 0; i < E; i++) {
+        int u,v,w; cout << "u,v,w: "; cin >> u >> v >> w;
+        
+        /// directed graph
+        graph[u].push_back({v,w});      
+
+        /// undirected graph
+        // graph[u].push_back({v,w});
+        // graph[v].push_back({u,w});
+    }
+
+    // source node of the graph
+    int src; cout << "src: "; cin >> src;
+
+    // distance array
+    vector<int> dist(V, INT_MAX);
+    dist[src] = 0;
+
+    // priority_queue<int> pq;                                 // max-heap(default)
+    // priority_queue<int, vector<int>, greater<int>> pq;      // min-heap(flipped)
+    //                 |        |          |
+    //               type,  container,   flip
+
+ 
+    // min-heap: {distance, node}
+    priority_queue< pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>> > pq;
+    pq.push({0, src});
+
+    while (!pq.empty()) {
+        auto [d, u] = pq.top();
+        pq.pop();
+
+        // skip outdated entries
+        if (d > dist[u]) continue;
+
+        for (auto [v, w]: graph[u]) {
+
+            if (dist[u]+w < dist[v]) {
+                dist[v] = dist[u] + w;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+
+    cout << "shortest distance from " <<  src << nl;
+    for (int i = 0; i < V; i++) {
+        if (dist[i] == INT_MAX) 
+            cout << src << " -> " << i << " : INF " << nl;
+        else 
+            cout << src << " -> " << i << " : " << dist[i] << nl;
+    }
+}
+
+
+// steps: 
+// input V,E
+// input adj List for storing  graph
+// take source node
+// input distance array and init dist[src]=0
+// PQ
+// pop least distance node and relax edges if possible
+//      - if possible push the new node in PQ
+//      - discard outdated entries {d > dist[u]} 
+
+
+// dijkstra pseudo code: 
+// --------------------
+//
+// Input graph
+//
+// dist[] = INF
+// dist[source] = 0
+//
+// push (0, source) into PQ
+// while PQ is not empty:
+//     (d, u) = node with smallest distance
+//     if d > dist[u]
+//         continue
+//
+//     for every neighbor (v,w) of u:
+//         if dist[u] + w < dist[v]
+//             dist[v] = dist[u] + w
+//             push (dist[v], v) into PQ
 ```
+
+<br>
 
 ### 4.3 Bellman Ford (Shortest Path)
 
 ```cpp
+#include<bits/stdc++.h>
+using namespace std;
+#define nl "\n"
+
+int main() {
+    int V, E;
+    cout << "num of Vertices: "; cin >> V;
+    cout << "num of Edges   : "; cin >> E;
+
+    // Dijkstra → Adjacency List (needs neighbors of a node frequently)
+    // Bellman-Ford → Edge List (needs to scan all edges repeatedly)
+    // Kruskal → Edge List (sort all edges)
+    // Prim → Adjacency List (grow from a node to neighbors)
+    vector<vector<int>> edgeList;
+    for (int i = 0; i < E; i++) {
+        int u,v,w;
+        cout << "u,v,w: "; 
+        cin >> u >> v >> w;
+
+        edgeList.push_back({u,v,w});
+    }
+    
+    int src; cout << "src node: "; cin >> src;
+    vector<int> dist(V, INT_MAX);   // INT_MAX -> initially all nodes are unreachable
+    dist[src] = 0;
+
+    // bellman ford relax edges  at max (V-1) times
+    // but we'll do just one more time for neg cycle detection
+    for (int i = 1; i <= V; i++) {
+        
+        for (auto edge: edgeList) {
+            int u = edge[0];
+            int v = edge[1];
+            int w = edge[2];
+
+            if (dist[u]==INT_MAX) continue;     // unreachable
+
+            if (dist[u]+w < dist[v]) {
+
+                // check for neg cycle
+                if (i == V) {
+                    cout << "neg cycle detected" << nl;
+                    break;
+                }
+
+                // relax edges
+                dist[v] = dist[u] + w;
+            }
+        }
+    }
+
+    cout << "shortest distance from: " << nl; 
+    for (int i = 0; i < V; i++) {
+        cout << src << "->" << i << "=" << dist[i] << nl;
+    }
+}
+
+
+// steps:
+// input V,E
+// input edgeList to store edges
+// input src 
+// input distance array & dist[src]=0
+// iterate 'V' times 
+//      - (V-1) for Bellman-Ford
+//      - +1 for neg cycle detection
+//      - relax edges
+
+
+// bellman-ford pseudo code:
+// ------------------------
+// dist[] = INF
+// dist[src] = 0
+//
+// repeat (V-1) times:
+//     for each edge (u,v,w) from edgeList
+//         if dist[u] is reachable
+//             if dist[u] + w < dist[v]
+//                 dist[v] = dist[u] + w
+
+// Then for negative cycle detection:
+//     for each edge (u,v,w)
+//         if dist[u] + w < dist[v]
+//             Negative Cycle Exists
 ```
+
+<br>
 
 ## 5. Dynamic Programming
 
@@ -517,5 +805,4 @@ int main() {
 ### 5.2 Coin Change
 
 ```cpp
-// Coin Change code
 ```
