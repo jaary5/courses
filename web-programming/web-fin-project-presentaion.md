@@ -1,14 +1,13 @@
 # 🛡️ MediVault Project Structure & Interview Cheat Sheet
 
-## 1. Tech Stack Summary
+## 1. Tech Stack 
 - **Frontend Framework**: Svelte 5 / SvelteKit (UI built using `.svelte` files and file-based routing)
 - **Backend & Database**: Convex (Real-time reactive backend and database schema defined in TypeScript)
 - **Styling**: Tailwind CSS v4 + UI Components (`bits-ui`, Lucide icons)
 - **Runtime & Tools**: Bun & Vite
 
----
 
-## 2. Global vs. Local UI Elements (What's the difference?)
+## 2. Global vs. Local UI Elements 
 
 ### 🌐 Global & Common UI Elements
 **"Global"** means styling or UI components that affect **the entire website or multiple pages at once**.
@@ -20,11 +19,11 @@
 **"Local"** means UI elements that **only belong to ONE specific page**.
 - Example: The "Reserve Medicine" button or the search bar on the Pharmacy page is local to `src/routes/(app)/pharmacy/+page.svelte`. Changing code there **will not affect** any other page.
 
----
 
-## 3. Simplified Answer: "Where is Server Routing & Authentication Protection Enforced?"
 
-### In plain English:
+## 3. Where is Server Routing & Authentication Protection Enforced?
+
+### Def>
 > *"How does the website check if a user is logged in, and stop unauthorized people from seeing private pages?"*
 
 It happens in **two main places**:
@@ -39,9 +38,9 @@ It happens in **two main places**:
      - Is the user logged in? If NOT $\rightarrow$ Redirect to `/login`.
      - Is an Admin trying to view customer dashboard? $\rightarrow$ Redirect them to `/admin`.
 
----
 
-## 4. "Which File Do I Edit To Change...?" Quick Reference
+
+## 4.  File Reference
 
 ### 🎨 Global UI & Styling
 | What to change | File Location |
@@ -68,9 +67,9 @@ It happens in **two main places**:
 | Admin Panel | `src/routes/(admin)/...` | [convex/admin.ts](file:///home/jaary5/Documents/mine/study/9th-(262)/web/project/MediVault/convex/admin.ts) |
 | Pharmacist Panel | `src/routes/(pharmacist)/...` | [convex/medicines.ts](file:///home/jaary5/Documents/mine/study/9th-(262)/web/project/MediVault/convex/medicines.ts) |
 
----
 
-## 5. Top Interview Questions You Might Be Asked (with Non-Dev Friendly Answers!)
+
+## 5. FAQ
 
 ### Q1: "If I want to add a new table or add a new field (like `phone_number` to user profile) in the database, where do I do that?"
 - **Answer**: 
