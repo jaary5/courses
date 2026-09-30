@@ -1,4 +1,4 @@
-# 🛡️ MediVault Project Structure & Interview Cheat Sheet
+# 🛡️ MediVault Project Presentaion
 
 ## 1. Tech Stack 
 - **Frontend Framework**: Svelte 5 / SvelteKit (UI built using `.svelte` files and file-based routing)
