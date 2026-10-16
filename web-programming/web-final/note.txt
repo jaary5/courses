@@ -1,0 +1,120 @@
+Updating Text: .innerHTML (if you want to include <br> or spans) 
+Disabling Elements: .disabled = true to lock inputs or buttons 
+Regex (.test): /[A-Z]/.test(string) ==> Check upperCase
+               /[a-z]/.test(string) ==> Check lowerCase
+               /[0-9]/.test(string) ==> Check number
+               /[@#$]/.test(string) ==> Check SpecialCharacter
+Math.random: Math.floor(Math.random() * (Max - Min + 1)) + Min 
+*php** $attendees = (int) $_POST["attendees"]; 
+*js**  let price = Number(document.getElementById("item-price").value) 
+
+
+Q1. HTML -> JS -> HTML
+-------------------------------------------------------------------------
+<body>
+    <input id="item-name" type="text" placeholder="item name">
+    <input id="item-price" type="text" placeholder="item price">
+    <button id="earning" type="submit">EARNING</button>
+    <div id="feedback">MY BUDGET:</div>
+
+    <script src="index.js"></script>
+</body>
+
+// to persist across multiple button clicks, we need global variables
+let earning_items=[]
+let total_earnings=0
+
+document.getElementById("earning").addEventListener("click", function()) {
+
+    // INPUT TAKING======================================================
+    let new_earning_item  = document.getElementById("item-name").value
+    let new_earning_price = Number(document.getElementById("item-price").value) 
+
+    // CALCULATION=======================================================
+    total_earnings += new_earning_price
+    earning_items.push(new_earning_item)
+
+    // SHOW IN HTML=======================================================
+    let feedback = ""            // get  some feedback
+    let out = "Attemps: " + attempt + " | Feedback: " + feedback
+    document.getElementById("output").innerHTML = out
+}
+
+
+Q2. HTML(form) -> PHP
+--------------------------------------------------------------------------
+<body>
+    <form action="index.php" method="post">
+        <input name="numOfStudents" placeholder="Num of students">
+        <input name="slicePerStudent" placeholder="Slice per student">
+        <input name="slicePerPizza" placeholder="Slice per pizza">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+<?php
+// Form input collection ==================================================
+$numOfStudents = (int) $_POST["numOfStudents"];
+$slicePerStudent = (int) $_POST["slicePerStudent"];
+$slicePerPizza = (int) $_POST["slicePerPizza"];
+
+// Calculation ============================================================
+$pizzaNeeded = ceil($slicePerStudent * $numOfStudents / $slicePerPizza);
+$leftOverSlices = ($pizzaNeeded * $slicePerPizza) - ($slicePerStudent * $numOfStudents);
+$wastedMoney = (1050 / $slicePerPizza) * $leftOverSlices;  
+
+// Feedback ================================================================
+echo "Total Pizzas: $pizzaNeeded 
+    | LeftOver Slices: $leftOverSlices 
+    | Wasted Money(BDT): $wastedMoney";
+?>
+
+Q3. PHP + MySQL
+----------------------------------------------------------------------------
+CREATE DATABASE exam_practice;
+USE exam_practice;
+
+CREATE TABLE products (
+    ProductID INT PRIMARY KEY,
+    ProductName VARCHAR(100),
+    Category VARCHAR(50),
+    Price DECIMAL(10,2),
+    Quantity INT,
+    Rating DECIMAL(3,1)
+);
+
+INSERT INTO products VALUES
+(1, 'Laptop', 'Electronics', 70000, 5, 4.8),
+(2, 'Mouse', 'Electronics', 1500, 15, 4.2),
+(3, 'Chair', 'Furniture', 8000, 8, 4.3),
+(4, 'Desk', 'Furniture', 12000, 6, 4.6),
+(5, 'Bottle', 'Accessories', 500, 20, 4.1),
+(6, 'Pen', 'Accessories', 100, 25, 4.7);
+
+
+<?php
+// CONNECTION====================================
+$conn = new mysqli("localhost","root","","db_name");
+if($conn->connect_error==false)
+    echo "connection successful<br>";
+
+// Selection query===============================
+$sql = "SELECT * FROM products";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo "Course: " . $row["CourseTitle"] . 
+        " | Enrolled: " . $row["total_students"] . "<br>";
+    }
+}
+
+// Update query====================================
+$sql="UPDATE student_final
+      SET Grade=Grade+5
+      WHERE Grade>80 AND Grade+5<=90 ";
+$result = $conn->query($sql);
+
+// Connection close
+$conn->close();
+
+?>

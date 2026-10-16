@@ -3,73 +3,73 @@
 
 ### summer26-q1
 
-![Preview](/web-programming/sum-26/q1/q1.png)
+![Preview](/web-programming/web-mid/sum-26/q1/q1.png)
 
-[View HTML](/web-programming/sum-26/q1/q1.html) | [View CSS](/web-programming/sum-26/q1/q1.css)
+[View HTML](/web-programming/web-mid/sum-26/q1/q1.html) | [View CSS](/web-programming/web-mid/sum-26/q1/q1.css)
 
 ---
 
 ### summer26-q2
 
-![Preview](/web-programming/sum-26/q2/q2.png)
+![Preview](/web-programming/web-mid/sum-26/q2/q2.png)
 
-[View HTML](/web-programming/sum-26/q2/q2.html) | [View CSS](/web-programming/sum-26/q2/q2.css)
+[View HTML](/web-programming/web-mid/sum-26/q2/q2.html) | [View CSS](/web-programming/web-mid/sum-26/q2/q2.css)
 
 ---
 
 ### spring26-slot1-q1
 
-![Preview](/web-programming/sp26-s1/sp26-q1.png)
+![Preview](/web-programming/web-mid/sp26-s1/sp26-q1.png)
 
-[View HTML](/web-programming/sp26-s1/sp26-q1.html) | [View CSS](/web-programming/sp26-s1/sp26-q1.css)
+[View HTML](/web-programming/web-mid/sp26-s1/sp26-q1.html) | [View CSS](/web-programming/web-mid/sp26-s1/sp26-q1.css)
 
 ---
 
 ### spring26-slot1-q2
 
-![Preview](/web-programming/sp26-s1/sp26-q2.png)
+![Preview](/web-programming/web-mid/sp26-s1/sp26-q2.png)
 
-[View HTML](/web-programming/sp26-s1/sp26-q2.html) | [View CSS](/web-programming/sp26-s1/sp26-q2.css)
+[View HTML](/web-programming/web-mid/sp26-s1/sp26-q2.html) | [View CSS](/web-programming/web-mid/sp26-s1/sp26-q2.css)
 
 ---
 
 ### spring26-slot2-q1
 
-![Preview](/web-programming/sp26-s2/sp26-s2-q1.png)
+![Preview](/web-programming/web-mid/sp26-s2/sp26-s2-q1.png)
 
-[View HTML](/web-programming/sp26-s2/sp26-s2-q1.html) | [View CSS](/web-programming/sp26-s2/sp26-s2-q1.css)
+[View HTML](/web-programming/web-mid/sp26-s2/sp26-s2-q1.html) | [View CSS](/web-programming/web-mid/sp26-s2/sp26-s2-q1.css)
 
 ---
 
 ### spring26-slot2-q2
 
-![Preview](/web-programming/sp26-s2/sp26-s2-q2.png)
+![Preview](/web-programming/web-mid/sp26-s2/sp26-s2-q2.png)
 
-[View HTML](/web-programming/sp26-s2/sp26-s2-q2.html) | [View CSS](/web-programming/sp26-s2/sp26-s2-q2.css)
+[View HTML](/web-programming/web-mid/sp26-s2/sp26-s2-q2.html) | [View CSS](/web-programming/web-mid/sp26-s2/sp26-s2-q2.css)
 
 ---
 
 ### summer25-q2
 
-![Preview](/web-programming/sum-25/sum-25-q2.png)
+![Preview](/web-programming/web-mid/sum-25/sum-25-q2.png)
 
-[View HTML](/web-programming/sum-25/sum-25-q2.html) | [View CSS](/web-programming/sum-25/sum-25-q2.css)
-
----
-
-### fall-25-q1
-
-![Preview](/web-programming/fall-25/q1.png)
-
-[View HTML](/web-programming/fall-25/q1.html) | [View CSS](/web-programming/fall-25/q1.css)
+[View HTML](/web-programming/web-mid/sum-25/sum-25-q2.html) | [View CSS](/web-programming/web-mid/sum-25/sum-25-q2.css)
 
 ---
 
 ### fall-25-q1
 
-![Preview](/web-programming/fall-25/q2.png)
+![Preview](/web-programming/web-mid/fall-25/q1.png)
 
-[View HTML](/web-programming/fall-25/q2.html) | [View CSS](/web-programming/fall-25/q2.css)
+[View HTML](/web-programming/web-mid/fall-25/q1.html) | [View CSS](/web-programming/web-mid/fall-25/q1.css)
+
+---
+
+### fall-25-q1
+
+![Preview](/web-programming/web-mid/fall-25/q2.png)
+
+[View HTML](/web-programming/web-mid/fall-25/q2.html) | [View CSS](/web-programming/web-mid/fall-25/q2.css)
 
 ---
 
