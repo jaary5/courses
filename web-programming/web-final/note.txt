@@ -118,3 +118,59 @@ $result = $conn->query($sql);
 $conn->close();
 
 ?>
+
+
+DB 
+------------------------------------------------------------------------------
+-- 1. Count records by category/grade/status
+SELECT Category, COUNT(*) AS total
+FROM table_name
+GROUP BY Category;
+
+-- 2. Count groups, show only those above a limit
+SELECT Status, COUNT(*) AS total
+FROM table_name
+GROUP BY Status
+HAVING COUNT(*) > 1;
+
+-- 3. Calculate total per group + sort descending
+SELECT Category, SUM(Revenue) AS total
+FROM table_name
+GROUP BY Category
+ORDER BY SUM(Revenue) DESC;
+
+-- 4. Multiple aggregate calculations per group
+SELECT Category, COUNT(*) AS total,
+       AVG(Rating) AS avg_rating,
+       SUM(Visitors) AS total_visitors
+FROM table_name
+GROUP BY Category
+HAVING AVG(Rating) > 4.4
+ORDER BY AVG(Rating) DESC;
+
+-- 5. Update records matching multiple conditions
+UPDATE table_name
+SET Status = 'Grace Period', Fee = 0
+WHERE Status = 'Overdue' AND DaysOverdue < 7;
+
+-- 6. Increase/decrease by percentage
+UPDATE table_name
+SET Price = Price * 1.10
+WHERE Price > 500;
+
+-- 7. Update only if the new value stays within a limit
+UPDATE table_name
+SET Salary = Salary + 5000
+WHERE Salary > 50000 AND Salary + 5000 <= 60000;
+
+-- 8. Compare against the average of a group
+SELECT ProductName,
+       CASE
+           WHEN Revenue > (
+               SELECT AVG(Revenue)
+               FROM sales_data
+               WHERE CategoryID = s.CategoryID
+           ) THEN 'Top Seller'
+           ELSE 'Regular Seller'
+       END AS Label
+FROM sales_data s;
